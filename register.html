@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register</title>
+</head>
+<body>
+    <h2>Register</h2>
+      {% if error %}
+        <div style="color: red;">{{ error }}</div>  <!-- Display the error message -->
+    {% endif %}
+   <form method="POST" action="{{ url_for('register') }}" enctype="multipart/form-data">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required><br>
+
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" id="first_name" required><br>
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required><br>
+
+        <label for="file">Upload Limerick File (Optional):</label>
+        <input type="file" name="file" id="file" required><br>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
